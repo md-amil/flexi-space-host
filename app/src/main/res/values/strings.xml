@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="add_workspace">add workspace</string>
+    <string name="space_address">Space Address</string>
+    <string name="contact_no">Contact No</string>
+    <string name="proceed">proceed</string>
+    <integer name="add_workspace">500</integer>
+</resources>
