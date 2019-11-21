@@ -8,79 +8,53 @@
     android:background="@color/colorAccent"
     tools:context=".activities.MainActivity" >
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button_bg"
-        android:padding="20dp"
-        android:text="login"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordField" />
-
-    <EditText
-        android:id="@+id/emailField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/email_bg"
-        android:cursorVisible="true"
-        android:focusable="auto"
-        android:freezesText="false"
-        android:hint="Email id"
-        android:includeFontPadding="false"
-        android:inputType="textEmailAddress"
-        android:lineSpacingExtra="1.2dp"
-        android:padding="20dp"
-        android:shadowColor="#E578ABEF"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textColorHint="#ffffff"
-        android:textCursorDrawable="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <EditText
-        android:id="@+id/passwordField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/email_bg"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="20dp"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:cursorVisible="true"
-        android:textCursorDrawable="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailField" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="90dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/host_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/host_logo"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/switchLoginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/transparent"
+        android:text="login"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/switchSignUpbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:text="sign up"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/switchLoginBtn" />
+
+    <FrameLayout
+        android:id="@+id/container_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchSignUpbtn">
+
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

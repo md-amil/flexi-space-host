@@ -3,10 +3,12 @@ package com.example.myapplication.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.myapplication.R
+import com.example.myapplication.utilities.App
 import com.example.myapplication.utilities.request.Request
 import org.json.JSONObject
 
@@ -19,7 +21,7 @@ class AddWorkspaceActivity : AppCompatActivity() {
     private lateinit var proceedBtn: Button
     private val authToken =
         "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFmYWE1M2Y2YmY2MDQ5MzE4MTRjNTBlN2Q3YTUxMmE5Mzc1MzczNGJlY2U4ZmE5ZDExMWYyY2RhYmYyY2RjMTY0YzMwYTc3OGE0Mzg5Mzg2In0.eyJhdWQiOiIxIiwianRpIjoiMWZhYTUzZjZiZjYwNDkzMTgxNGM1MGU3ZDdhNTEyYTkzNzUzNzM0YmVjZThmYTlkMTExZjJjZGFiZjJjZGMxNjRjMzBhNzc4YTQzODkzODYiLCJpYXQiOjE1NzM4MDczMjksIm5iZiI6MTU3MzgwNzMyOSwiZXhwIjoxNjA1NDI5NzI5LCJzdWIiOiI5MSIsInNjb3BlcyI6W119.iKJgBiMNhJ-KFphz9LdtS3L8pJe4uCn9RzM6Mx852ZL4cOmB2o3fMf2lY1z4I0tDS8AoaBTl95g_-uWQKESuBjHvBpk4B0hMWaKpcUxUftUnoK_OFGap_innwcsP1ppDueAoEMAzjkto_plb-rdVIzjygC_ZqzxsxB4SebwUxISu91rWNlkU1Ov381CB2G5vtTbxOA7cvWhL2gTBixAwOgzEvmGNnL-jO89ZCfAkjVzxJfiFBL3tP6_gx1fxsmOfTnfA6mWF2tGcCXoTNP7WVxdv0RrFCJv-X-4PH3RCBkdQ_uGC9XTBLJ9vEmo6aU-FrE-iwb03Ia_4zkKYy7stUK3B61it4L9ELNhNU5yuHY6G8VzpH-X1kG0HnzxDQrwDt58QXw5LPbK6FMPGlgtncpY_4mWQXuJXsWdF1XExrc1QB0RjBv0Z848WUsAo7JKkIIVnqjdyxnM2Hsz8G48dhcrbH-jyymtFbwFFL1-v03WqEkZHjjVgcteahAQNb-MDmH5xdRnTMi9b9ITe_kEMH0MIUkqnt-5QfruUGA-ZMwwP1WowfKa3FejcqS03yM6C9tZe-tzZmjZJ8zgLSwYR7FChjnnoldIakChmHDKAMDhWsyS0I5T0nYdMEDUqw2X8fjiPxzaYCkKwaJe3bVh4pESIQGt8fMj_JjbdkrJpLn4"
-
+//    private val authToken = App.loginPrefs.authToken
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_workspace)
@@ -27,7 +29,7 @@ class AddWorkspaceActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        nameField = findViewById(R.id.nameField)
+        nameField = findViewById(R.id.spaceTitle)
         websiteField = findViewById(R.id.websiteField)
         addressField = findViewById(R.id.addressField)
         contactField = findViewById(R.id.contactField)
@@ -57,6 +59,7 @@ class AddWorkspaceActivity : AppCompatActivity() {
                 startActivity(intent)
             }.header("authorization", authToken).header("accept","application/json")
             .catch {
+                Log.d("addingWorkspace",it.message)
 //                if(space added with same name){
 //                    nameField.error = it.message
 //                }

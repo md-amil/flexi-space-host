@@ -1,10 +1,12 @@
 package com.example.myapplication.utilities.request
 
 import android.content.Context
+import android.util.Log
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.android.volley.Request.Method
+import com.android.volley.VolleyError
 import org.json.JSONObject
 
 
@@ -19,17 +21,22 @@ class Request(private val context: Context) {
         val r = object: StringRequest(method, "http://fs.tinycode.in/api$url", Response.Listener {
             successCallback?.invoke(it!!)
         }, Response.ErrorListener {
-            val statusCode = it.networkResponse.statusCode
-            errorCallback?.invoke(
-                Error(it.networkResponse.data.toString(charset("UTF-8")), statusCode)
-            )
+           try {
+               val statusCode = it.networkResponse.statusCode
+               Log.d("loginfragment",statusCode.toString())
+               errorCallback?.invoke(
+                   Error(it.networkResponse.data.toString(charset("UTF-8")), statusCode)
+               )
+           }catch(e:VolleyError){
+               Log.d("loginfragment",e.stackTrace.toString())
+           }
         }) {
             override fun getBodyContentType(): String {
                 return "application/json; charset=utf-8"
             }
 
             override fun getHeaders(): MutableMap<String, String> {
-//                _headers["Authorization"] = ""
+                _headers["Authorization"] = ""
                 return _headers
             }
 

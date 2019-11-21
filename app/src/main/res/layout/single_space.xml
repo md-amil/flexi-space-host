@@ -8,99 +8,198 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/spaceMedia"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nameField"
+        android:id="@+id/spaceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/spaceMedia"
+        app:layout_constraintTop_toTopOf="@+id/spaceMedia"
         tools:text="Sandeep(Bigradar)" />
 
     <TextView
-        android:id="@+id/dateView"
+        android:id="@+id/spacedateView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/nameField"
-        app:layout_constraintTop_toBottomOf="@+id/nameField"
+        app:layout_constraintStart_toStartOf="@+id/spaceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/spaceTitle"
         tools:text="20th oct 2019" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/spaceOpenHourView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/dateView"
-        app:layout_constraintTop_toBottomOf="@+id/dateView"
+        app:layout_constraintStart_toStartOf="@+id/spacedateView"
+        app:layout_constraintTop_toBottomOf="@+id/spacedateView"
         tools:text="10:00 to 12:00" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/sDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:textColor="@color/colorAccent"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
+        app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
+        app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView"
         tools:text="c 1 credit" />
 
     <Button
-        android:id="@+id/skip_button"
+        android:id="@+id/declineButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_decline_button"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:text="decline"
         android:textColor="#E00C0C"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        style="?android:attr/borderlessButtonStyle"/>
+        app:layout_constraintStart_toStartOf="@+id/spaceMedia"
+        app:layout_constraintTop_toTopOf="@+id/skipButton" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/skipButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/bg_skip_button"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:text="skip"
         android:textColor="#c3c3c3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/accept_button"
+        app:layout_constraintEnd_toStartOf="@+id/acceptButton"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/skip_button"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        style="?android:attr/borderlessButtonStyle"/>
+        app:layout_constraintStart_toEndOf="@+id/declineButton"
+        app:layout_constraintTop_toBottomOf="@+id/spaceMedia" />
 
     <Button
-        android:id="@+id/accept_button"
+        android:id="@+id/acceptButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_accept_button"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:text="accept"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        style="?android:attr/borderlessButtonStyle"/>
+        app:layout_constraintStart_toEndOf="@+id/skipButton"
+        app:layout_constraintTop_toTopOf="@+id/skipButton" />
+
+    <LinearLayout
+        android:id="@+id/successLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/holo_green_light"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceMedia">
+
+        <TextView
+            android:id="@+id/sLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Request Accepted"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
+            app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
+            app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView" />
+
+        <TextView
+            android:id="@+id/sTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="20th oct 2019| 10:00 to 12:00"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
+            app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
+            app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView" />
+
+        <TextView
+            android:id="@+id/sStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="updated in your calender"
+            android:textColor="@android:color/white"
+            tools:text="updated in your calender" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/declineLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/holo_red_light"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceMedia">
+
+        <TextView
+            android:id="@+id/dLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Requested Decline"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
+            app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
+            app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView"
+            tools:text="Request Accepted" />
+
+        <TextView
+            android:id="@+id/dTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="20th oct 2019| 10:00 to 12:00"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
+            app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
+            app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView"
+            tools:text="20th oct 2019| 10:00 to 12:00" />
+
+        <TextView
+            android:id="@+id/dStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="message sent to customer"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

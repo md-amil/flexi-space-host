@@ -1,8 +1,11 @@
 package com.example.myapplication.modals
 
 data class Space(
+    val id: Int,
     val about: String?,
     val address: String?,
+    val image:Image?,
+    val media:Media?,
     val area_id: Int?,
     val brand_id: Int?,
     val capacity: Int?,
@@ -11,7 +14,6 @@ data class Space(
     val created_at: String?,
     val description: String?,
     val flag: Int?,
-    val id: Int?,
     val latitude: String?,
     val longitude: String?,
     val map: String?,

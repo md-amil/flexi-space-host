@@ -10,13 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.SpaceCreatedActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:name=".utilities.App">
+        <activity android:name=".activities.SpaceCreatedActivity"/>
         <activity android:name=".activities.AddWorkspaceActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.ChooseActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity"
+            android:launchMode="singleTop"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
