@@ -18,7 +18,6 @@
         <activity android:name=".activities.RequestAccessActivity"></activity>
         <activity android:name=".activities.SpaceCreatedActivity" />
         <activity android:name=".activities.AddWorkspaceActivity" />
-        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.ChooseActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity

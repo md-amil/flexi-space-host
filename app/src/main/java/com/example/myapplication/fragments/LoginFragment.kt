@@ -13,6 +13,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.activities.ChooseActivity
+import com.example.myapplication.activities.MainActivity
 import com.example.myapplication.modals.user.InitUser
 import com.example.myapplication.utilities.App
 import com.example.myapplication.utilities.request.Request
@@ -68,7 +69,7 @@ class LoginFragment : Fragment() {
                     App.loginPrefs.authToken = initUser.token
                     App.loginPrefs.isLoggedIn = true
                     Toast.makeText(context, "${initUser.user.email}", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(requireContext(), ChooseActivity::class.java))
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
                 }
             }.catch {
                 Log.d(TAG,"inter the error call back callback")

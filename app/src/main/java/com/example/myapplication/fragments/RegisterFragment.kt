@@ -1,5 +1,6 @@
 package com.example.myapplication.fragments
 
+import android.content.Intent
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +12,9 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.myapplication.R
+import com.example.myapplication.activities.ChooseActivity
+import com.example.myapplication.activities.LoginActivity
+import com.example.myapplication.activities.MainActivity
 import com.example.myapplication.modals.user.InitUser
 import com.example.myapplication.utilities.request.Request
 import com.google.gson.Gson
@@ -49,7 +53,7 @@ class RegisterFragment : Fragment() {
     }
 
     private val registerListener = View.OnClickListener {
-
+        startActivity(Intent(requireContext(),ChooseActivity::class.java))
         if(true){
             val name = nameField.text.toString().trim()
             val username= emailField.text.toString().trim()
@@ -67,19 +71,17 @@ class RegisterFragment : Fragment() {
                 data.put("username",username)
                 data.put("password",password)
                 data.put("device_token","dslwdkjjkdsfjkheoskjsklfjherlskjfkjhsfkksflkhsdklgjheurkfghnjgfkjhdrgrhekfkjff")
-                Request(requireContext()).post("/register",data).then{
+                Request(requireContext()).post("/register",data).header("accept","application/json").then{
+                    startActivity(Intent(requireContext(), ChooseActivity::class.java))
                     progressbar.visibility = View.INVISIBLE
                     val  registerUser= Gson().fromJson(it, InitUser::class.java)
-                    Toast.makeText(context, registerUser.user.email,Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, registerUser.user.email,Toast.LENGTH_SHORT).show()
                 }.catch {
                     progressbar.visibility = View.INVISIBLE
-                    Toast.makeText(context, it.message,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "error ${it.message}",Toast.LENGTH_SHORT).show()
 
                 }
-
-
             }
-
         }
     }
 

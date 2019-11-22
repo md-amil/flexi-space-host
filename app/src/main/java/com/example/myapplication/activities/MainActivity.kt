@@ -41,12 +41,9 @@ class MainActivity : AppCompatActivity() {
             fm.beginTransaction().add(R.id.content, dashboardFragment, "1").commit()
             bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         }
-
     }
-
     override fun onBackPressed() {
-        finish()
-        super.onBackPressed()
+        finishAffinity()
     }
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
