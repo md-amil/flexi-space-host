@@ -13,12 +13,10 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.activities.ChooseActivity
-import com.example.myapplication.activities.LoginActivity
 import com.example.myapplication.modals.user.InitUser
 import com.example.myapplication.utilities.App
 import com.example.myapplication.utilities.request.Request
 import com.google.gson.Gson
-import kotlinx.android.synthetic.*
 import org.json.JSONObject
 
 class LoginFragment : Fragment() {

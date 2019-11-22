@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.ItemClickListener
+import com.example.myapplication.interfaces.ItemClickListener
 
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SpaceAdapter
@@ -17,7 +16,6 @@ import com.example.myapplication.utilities.App
 import com.example.myapplication.utilities.request.Request
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_accept.*
-import kotlinx.android.synthetic.main.single_space.*
 
 class AcceptFragment : Fragment(){
     lateinit var spaceAdapter: SpaceAdapter
@@ -43,7 +41,7 @@ class AcceptFragment : Fragment(){
 
         }
     }
-private val listener = object: ItemClickListener{
+private val listener = object: ItemClickListener {
     override fun skipButtonClicked(id: Int, view: View) {
         Toast.makeText(requireContext(),"sending skip request",Toast.LENGTH_SHORT).show()
     }

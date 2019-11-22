@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.myapplication.R
-import com.example.myapplication.utilities.App
 import com.example.myapplication.utilities.request.Request
 import org.json.JSONObject
 
@@ -29,7 +28,7 @@ class AddWorkspaceActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        nameField = findViewById(R.id.spaceTitle)
+        nameField = findViewById(R.id.search_space_title)
         websiteField = findViewById(R.id.websiteField)
         addressField = findViewById(R.id.addressField)
         contactField = findViewById(R.id.contactField)

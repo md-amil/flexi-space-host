@@ -2,6 +2,7 @@ package com.example.myapplication.utilities.request
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -22,6 +23,7 @@ class Request(private val context: Context) {
             successCallback?.invoke(it!!)
         }, Response.ErrorListener {
            try {
+               Toast.makeText(context,"api error",Toast.LENGTH_SHORT)
                val statusCode = it.networkResponse.statusCode
                Log.d("loginfragment",statusCode.toString())
                errorCallback?.invoke(

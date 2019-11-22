@@ -9,9 +9,9 @@ class App: Application() {
         lateinit var loginPrefs:SheredPref
     }
     override fun onCreate() {
+        Log.d("create,",this::class.java.toString())
         super.onCreate()
         AndroidThreeTen.init(this)
-        Log.d("create","hello world")
         loginPrefs = SheredPref(applicationContext,"loginPreferences")
     }
 }

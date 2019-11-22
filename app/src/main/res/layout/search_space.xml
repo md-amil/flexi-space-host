@@ -38,69 +38,37 @@
         app:layout_constraintTop_toBottomOf="@+id/search_space_title"
         tools:text="20th oct 2019" />
 
-    <TextView
-        android:id="@+id/spaceOpenHourView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/search_space_address"
-        app:layout_constraintTop_toBottomOf="@+id/search_space_address"
-        tools:text="10:00 to 12:00" />
-
-    <TextView
-        android:id="@+id/sDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/spaceMedia"
-        app:layout_constraintStart_toStartOf="@+id/spaceOpenHourView"
-        app:layout_constraintTop_toBottomOf="@+id/spaceOpenHourView"
-        tools:text="c 1 credit" />
-
-    <Button
-        android:id="@+id/declineButton"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_decline_button"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:text="decline"
-        android:textColor="#E00C0C"
-        app:layout_constraintStart_toStartOf="@+id/spaceMedia"
-        app:layout_constraintTop_toTopOf="@+id/contact_button" />
-
     <Button
         android:id="@+id/contact_button"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_skip_button"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:text="skip"
+        android:text="contact"
         android:textColor="#c3c3c3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/request_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/declineButton"
+        app:layout_constraintStart_toStartOf="@+id/spaceMedia"
         app:layout_constraintTop_toBottomOf="@+id/spaceMedia" />
 
     <Button
         android:id="@+id/request_button"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_accept_button"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:text="accept"
+        android:text="request"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/contact_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/contact_button"

@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myapplication.R
 import com.example.myapplication.fragments.CalendarFragment
 import com.example.myapplication.fragments.DashboardFragment
+import com.example.myapplication.fragments.EmptyRequestFragment
 import com.example.myapplication.utilities.App
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val calenderFragment: Fragment = CalendarFragment()
@@ -21,11 +24,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val toolbar:Toolbar = findViewById(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.navigation)
 
         if(!App.loginPrefs.isLoggedIn){
             val intent  = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+        }
+        // if user has no space to show
+        else if(false){
+            fm.beginTransaction().add(R.id.content, EmptyRequestFragment(), "3").commit()
         }else{
             fm.beginTransaction().add(R.id.content, calenderFragment, "2").hide(calenderFragment)
                 .commit()
@@ -33,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         }
 
+    }
+
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
     }
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
